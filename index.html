@@ -67,24 +67,106 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 				</section>
 
 				<section>
-					<h2>Backend for front-end (bff)</h2>
-					*imagem  parecida com a do app + microservices*
+          <h2>micro-serviços 💔</h2>
+          <img src="images/microsservices-wout-bff.png" height=400 />
 				</section>
+          
+        <section>
+          <h2>Backend for front-end (bff)</h2>
+          <img src="images/microsservices-w-bff.png" height=400 />
+        </section>
+
+        <section>
+          <h2 class="purple">Backend for front-end (bff)</h2>
+          <p>Abrams (Shuffle - backoffice)</p>
+          <p>Shore (Shell - novo app)</p>
+        <p>Stormshield (Ghostflame - Nuconta)</p>
+        </section>
+
+        <section>
+          <h2>GraphQL</h2>
+          <h3><em>Query language</em> para APIs</h3>
+          <h3>Agnóstico a linguagem, tanto pra cliente quanto pra servidor</h3>
+          <h3>Schema funciona como um contrato entre o cliente o servidor</h3>
+        </section>
 
 				<section>
-					temos graphql e api de grafos no shell (app novo) e backoffice
+          <code>
+            type CreditCard {
+              number: Int!
+              ccv: Int!
+              status: String!
+            }
+            type Customer {
+              id: Int!
+              name: String!
+              email: String!
+              cpf: String!
+              creditCards: [CreditCard]
+            }
+          </code>
 				</section>
 
-				<section>
-				</section>
+        <section>
+          <h2>GraphQL</h2>
+          <h3>Queries</h3>
+          <h3>Mutations</h3>
+        </section>
+
 
 				<section>
+          <h2>Queries</h2>
+          <code>
+            query customer(id: Int!) {
+              name
+              email
+              cpf
+              creditCards {
+                number
+              }
+            }
+          </code>
 				</section>
 
-				<section>
-				</section>
+
+        <section>
+          <h2>Queries</h2>
+          <code>
+            "data": {
+            name
+            email
+            cpf
+            creditCards {
+            number
+            }
+            }
+          </code>
+        </section>
 
 				<section>
+          <h2>Apollo</h2>
+          <h3>Cliente</h3>
+          <h3>Angular; Android; iOS; (colocar logo)</h3>
+          <h3>Servidor</h3>
+				</section>
+
+        <section>
+          query + mutation components
+        </section>
+
+        <section>
+          apollo-link-state
+
+          sdd redux
+          why? on mobile apps we still need global state
+        </section>
+
+        <section>
+          show datam
+          mutate data -- using ui state
+        </section>
+				<section>
+          other libraries?
 				</section>
 			</div>
 		</div>
