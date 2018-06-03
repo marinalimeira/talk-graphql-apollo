@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/theme/nu.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="lib/css/color-brewer.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -85,18 +85,22 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
         <section>
           <h2>GraphQL</h2>
-          <h3><em>Query language</em> para APIs</h3>
-          <h3>Agnóstico a linguagem, tanto pra cliente quanto pra servidor</h3>
-          <h3>Schema funciona como um contrato entre o cliente o servidor</h3>
+          <ul>
+            <li><em>Query language</em> para APIs</li>
+            <li class="fragment">Agnóstico a linguagem, tanto pra cliente quanto pra servidor</li>
+            <li class="fragment">Schema funciona como um contrato entre o cliente o servidor</li>
+          </ul>
         </section>
 
 				<section>
-          <code>
+          <pre>
+            <code data-trim data-noescape>
             type CreditCard {
               number: Int!
               ccv: Int!
               status: String!
             }
+
             type Customer {
               id: Int!
               name: String!
@@ -104,49 +108,72 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               cpf: String!
               creditCards: [CreditCard]
             }
-          </code>
+            </code>
+          </pre>
 				</section>
 
         <section>
           <h2>GraphQL</h2>
           <h3>Queries</h3>
-          <h3>Mutations</h3>
+          <h3 class="fragment">Mutations</h3>
         </section>
-
 
 				<section>
           <h2>Queries</h2>
-          <code>
-            query customer(id: Int!) {
-              name
-              email
-              cpf
-              creditCards {
-                number
-              }
-            }
-          </code>
-				</section>
+          <pre>
+            <code data-trim data-noescape>
+query customer(id: Int!) {
+  name
+  email
+  cpf
+  creditCards {
+    number
+  }
+}
+            </code>
+          </pre>
+        </section>
 
 
         <section>
           <h2>Queries</h2>
-          <code>
-            "data": {
-            name
-            email
-            cpf
-            creditCards {
-            number
-            }
-            }
-          </code>
+          <pre>
+            <code data-trim data-noescape>
+"data": {
+  "name": "Roy Trenneman",
+  "email": "roy.trenneman@sky.net",
+  "cpf": "12345678900",
+  "creditCards": [{
+    "number": "5032********9841",
+  }]
+}
+              </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Queries</h2>
+          <pre>
+            <code data-trim data-noescape>
+"data": {
+},
+"error": {
+}
+              </code>
+          </pre>
+        </section>
+
+        <section>
+          screenshot of https://www.apollographql.com/
         </section>
 
 				<section>
           <h2>Apollo</h2>
           <h3>Cliente</h3>
-          <h3>Angular; Android; iOS; (colocar logo)</h3>
+          <img class="stack" src="images/angular-logo.png" />
+          <img class="stack" src="images/react-logo.png" />
+          <img class="stack" src="images/android-logo.png" />
+          <img class="stack" src="images/ios-logo.png" />
           <h3>Servidor</h3>
 				</section>
 
