@@ -35,7 +35,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 				<section>
 					<h3>Marina Limeira</h3>
 					<p>Engenheira de Software @ Nubank</p>
-					<p>Estudando Ciência da Computação @ PUC-SP</p>
+					<p>Ciência da Computação @ PUC-SP</p>
 					<a href="www.marinalimeira.com" class="purple-link">marinalimeira.com</a>
 				</section>
 
@@ -85,49 +85,40 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
         <section>
           <h2>GraphQL</h2>
-          <ul>
-            <li><em>Query language</em> para APIs</li>
-            <li class="fragment">Agnóstico a linguagem, tanto pra cliente quanto pra servidor</li>
-            <li class="fragment">Schema funciona como um contrato entre o cliente o servidor</li>
-          </ul>
+            <p><em>Query language</em> para APIs</p>
+            <p class="fragment">Agnóstico a linguagem, tanto pra cliente quanto pra servidor</p>
+            <p class="fragment">Schema funciona como um contrato entre o cliente o servidor</p>
         </section>
 
 				<section>
           <pre>
             <code data-trim data-noescape>
-            type CreditCard {
-              number: Int!
-              ccv: Int!
-              status: String!
+            type Item {
+              name: String!
+              price: Int!
+              quantity: Int
             }
 
-            type Customer {
-              id: Int!
-              name: String!
-              email: String!
-              cpf: String!
-              creditCards: [CreditCard]
+            type Storage {
+              items: [Item]
             }
             </code>
           </pre>
 				</section>
 
         <section>
-          <h2>GraphQL</h2>
-          <h3>Queries</h3>
-          <h3 class="fragment">Mutations</h3>
+          <h2>Queries</h2>
+          <p>Equivalente ao GET do REST</p>
         </section>
 
 				<section>
           <h2>Queries</h2>
           <pre>
             <code data-trim data-noescape>
-query customer(id: Int!) {
-  name
-  email
-  cpf
-  creditCards {
-    number
+query {
+  items {
+    name
+    price
   }
 }
             </code>
@@ -139,13 +130,18 @@ query customer(id: Int!) {
           <h2>Queries</h2>
           <pre>
             <code data-trim data-noescape>
-"data": {
-  "name": "Roy Trenneman",
-  "email": "roy.trenneman@sky.net",
-  "cpf": "12345678900",
-  "creditCards": [{
-    "number": "5032********9841",
-  }]
+{ "data": {
+  "items": [
+   {
+      "name": "Poké Ball",
+      "price": "200"
+    }, 
+    {
+      "name": "Super Potion",
+      "price": "200"
+    }
+    ]
+  }
 }
               </code>
           </pre>
@@ -155,16 +151,48 @@ query customer(id: Int!) {
           <h2>Queries</h2>
           <pre>
             <code data-trim data-noescape>
-"data": {
-},
-"error": {
+{
+  "data": {
+    "items": null,
+  },
+  "errors": [
+    {
+      "message": "Quantity must be bigger than 0!"m
+      "locations": [
+        {
+          "line": 2,
+          "column": 3
+        }
+    }
+  ]
 }
               </code>
           </pre>
         </section>
 
         <section>
-          screenshot of https://www.apollographql.com/
+          <h2>Mutation</h2>
+          <p>Equivalente a POST/PUT/PATCH/DELETE do REST</p>
+        </section>
+
+        <section>
+          <h2>Mutation</h2>
+          <pre>
+            <code data-trim data-noescape>
+mutation {
+  buyItem(input: { name: 'Poké Ball', quantity: 10}) {
+    success
+  }
+}
+              </code>
+          </pre>
+        </section>
+
+
+        <section>
+          <h2>Apollo</h2>
+
+          <img src="images/apollo-website.png" height="450"/>
         </section>
 
 				<section>
@@ -175,25 +203,47 @@ query customer(id: Int!) {
           <img class="stack" src="images/android-logo.png" />
           <img class="stack" src="images/ios-logo.png" />
           <h3>Servidor</h3>
+          <img class="stack" src="images/js-logo.png" />
 				</section>
 
         <section>
-          query + mutation components
+          { hora de mostrar código }
         </section>
 
         <section>
-          apollo-link-state
+          <h2>apollo-link-state</h2>
 
-          sdd redux
-          why? on mobile apps we still need global state
+          <p>Mesma finalidade do Redux ➡ estado global<p>
+          <p class="fragment">É possível utilizar mesma query para client e server</p>
         </section>
 
         <section>
-          show datam
-          mutate data -- using ui state
+          <h2>apollo-link-state</h2>
+          <pre>
+            <code data-trim data-noescape>
+query {
+  items {
+    name
+    price
+    quantity @client
+  }
+}
+            </code>
+          </pre>
         </section>
-				<section>
-          other libraries?
+
+        <section>
+          { hora de mostrar mais código }
+        </section>
+
+        <section data-background-color="#82269E">
+          <h2>Obrigada!</h2>
+          <br />
+          <h3><a style="color: white">sou.nu/vagasnu</a></h3>
+
+          <br />
+          <p><a style="color: white">github.com/marinalimeira/poke-mart</a></p>
+          <p><a style="color: white">github.com/marinalimeira/poke-mart-server</a></p>
 				</section>
 			</div>
 		</div>
