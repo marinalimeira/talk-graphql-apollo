@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>title</title>
+    <title>[Talk] GraphQL + Apollo</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/nu.css">
@@ -108,7 +108,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
         <section>
           <h2>Queries</h2>
-          <p>Equivalente ao GET do REST</p>
+          <p>Equivalente ao <span class="purple">GET</span> do REST</p>
         </section>
 
 				<section>
@@ -130,16 +130,17 @@ query {
           <h2>Queries</h2>
           <pre>
             <code data-trim data-noescape>
-{ "data": {
-  "items": [
-   {
-      "name": "Poké Ball",
-      "price": "200"
-    }, 
-    {
-      "name": "Super Potion",
-      "price": "200"
-    }
+{
+  "data": {
+    "items": [
+     {
+        "name": "Poké Ball",
+        "price": "200"
+      }, 
+      {
+        "name": "Super Potion",
+        "price": "200"
+      }
     ]
   }
 }
@@ -157,7 +158,7 @@ query {
   },
   "errors": [
     {
-      "message": "Quantity must be bigger than 0!"m
+      "message": "Quantity must be bigger than 0!",
       "locations": [
         {
           "line": 2,
@@ -172,7 +173,7 @@ query {
 
         <section>
           <h2>Mutation</h2>
-          <p>Equivalente a POST/PUT/PATCH/DELETE do REST</p>
+          <p>Equivalente a <span class="purple">POST/PUT/PATCH/DELETE</p> do REST</p>
         </section>
 
         <section>
@@ -214,7 +215,8 @@ mutation {
           <h2>apollo-link-state</h2>
 
           <p>Mesma finalidade do Redux ➡ estado global<p>
-          <p class="fragment">É possível utilizar mesma query para client e server</p>
+          <p class="fragment">É possível utilizar mesma query para dados locais e do servidor</p>
+          <p class="fragment">Single source of truth</p>
         </section>
 
         <section>
@@ -225,7 +227,10 @@ query {
   items {
     name
     price
-    quantity @client
+    quantity
+  }
+  shopping @client {
+    quantity
   }
 }
             </code>
