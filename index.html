@@ -90,17 +90,18 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
         </section>
 
         <section>
+          <h2>GraphQL</h2>
           <pre>
             <code data-trim data-noescape>
-            type Item {
-              name: String!
-              price: Int!
-              quantity: Int
-            }
+type Item {
+  name: String!
+  price: Int!
+  quantity: Int
+}
 
-            type Storage {
-              items: [Item]
-            }
+type Storage {
+  items: [Item]
+}
             </code>
           </pre>
         </section>
@@ -168,13 +169,13 @@ query {
         </section>
 
         <section>
-          <h2>GraphQL</h2>
+          <h2>Error Handling</h2>
           <p>Status code <em>normalmente</em> é 200</p>
           <p class="fragment">Informações sobre o erro estarão no corpo da resposta</p>
         </section>
 
         <section>
-          <h2>Queries</h2>
+          <h2>Error Handling</h2>
           <pre>
             <code data-trim data-noescape class="json">
 {
@@ -194,7 +195,7 @@ query {
 
         <section>
           <h2>Mutation</h2>
-          <p>Equivalente a <span class="purple">POST/PUT/PATCH/DELETE</p> do REST</p>
+          <p>Equivalente a <span class="purple">POST - PUT - PATCH - DELETE</span> do REST</p>
         </section>
 
         <section>
@@ -325,6 +326,7 @@ mutate({
 			Reveal.initialize({
         transition: 'fade',
         backgroundTransition: 'fade',
+        history: true,
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
           { src: 'plugin/markdown/markdown.js' },
