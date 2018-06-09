@@ -34,8 +34,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 				<section>
 					<h3>Marina Limeira</h3>
+          <p>Ciência da Computação @ PUC-SP</p>
 					<p>Engenheira de Software @ Nubank</p>
-					<p>Ciência da Computação @ PUC-SP</p>
 					<a href="www.marinalimeira.com" class="purple-link">marinalimeira.com</a>
 				</section>
 
@@ -49,7 +49,9 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 					<img class="stack" src="images/clojure-logo.png" />
 					<img class="stack" src="images/datomic-logo.png" />
 					<img class="stack" src="images/kafka-logo.png" />
-					<img class="stack" src="images/cljs-logo.png" />
+          <img class="stack" src="images/cljs-logo.png" /></br>
+          <img class="stack" src="images/android-logo.png" />
+          <img class="stack" src="images/ios-logo.png" />
 					<img class="stack" src="images/react-logo.png" />
 					<img class="stack" src="images/graphql-logo.png" />
 				</section>
@@ -86,6 +88,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
         <section>
           <h2>GraphQL</h2>
             <p><em>Query language</em> para APIs</p>
+            <p class="fragment">Alternativa ao REST</p>
             <p class="fragment">Schema funciona como um contrato entre o cliente o servidor</p>
         </section>
 
@@ -124,6 +127,15 @@ type Storage {
           <img class="stack-gl" src="images/js-logo.png" />
           <img class="stack-gl" src="images/erlang-logo.png" />
           <img class="stack-gl" src="images/java-logo.png" />
+        </section>
+
+        <section>
+          <h2>poke-mart</h2>
+
+          <img src="images/poke-mart.png" />
+
+          <p><a href="https://github.com/marinalimeira/poke-mart">github.com/marinalimeira/poke-mart</a></p>
+          <p><a href="https://github.com/marinalimeira/poke-mart-server">github.com/marinalimeira/poke-mart-server</a></p>
         </section>
 
         <section>
@@ -169,9 +181,27 @@ query {
         </section>
 
         <section>
+          { hora da demo }
+        </section>
+
+        <section>
           <h2>Error Handling</h2>
-          <p>Status code <em>normalmente</em> é 200</p>
+          <p>Status code <em>normalmente</em> é 200 ou 400</p>
           <p class="fragment">Informações sobre o erro estarão no corpo da resposta</p>
+        </section>
+
+        <section>
+          <h2>Error Handling</h2>
+          <p>Status 4xx ou 5xx</p>
+          <p><strong>e.g. PIN - 403</strong></p>
+        </section>
+
+        <section>
+          <h2>Error Handling</h2>
+          <p>Padrão é: não tem padrão 😢</p>
+          <small>
+            Ref: <a href="http://facebook.github.io/graphql/October2016/#sec-Errors"> facebook.github.io/graphql </a>
+          </small>
         </section>
 
         <section>
@@ -306,12 +336,7 @@ mutate({
 
         <section data-background-color="#82269E">
           <h2>Obrigada!</h2>
-          <br />
           <h3><a style="color: white">sou.nu/vagasnu</a></h3>
-
-          <br />
-          <p><a style="color: white">github.com/marinalimeira/poke-mart</a></p>
-          <p><a style="color: white">github.com/marinalimeira/poke-mart-server</a></p>
 				</section>
 			</div>
 		</div>
