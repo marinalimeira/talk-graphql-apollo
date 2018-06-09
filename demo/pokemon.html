@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script src="js/aframe.min.js"></script>
+    <script src="js/TGALoader.js"></script> 
+    <script>THREE.Loader.Handlers.add( /\.tga$/i, new THREE.TGALoader() );</script>
+  </head>
+  </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="pikachu-obj" src="obj/pikachu/pikachu.obj"></a-asset-item>
+        <a-asset-item id="pikachu-mtl" src="obj/pikachu/pikachu.mtl"></a-asset-item>
+        <a-asset-item id="bulbasaur-obj" src="obj/bulbasaur/bulbasaur.obj"></a-asset-item>
+        <a-asset-item id="bulbasaur-mtl" src="obj/bulbasaur/bulbasaur.mtl"></a-asset-item>
+        <a-asset-item id="squirtle-obj" src="obj/squirtle/squirtle.obj"></a-asset-item>
+        <a-asset-item id="squirtle-mtl" src="obj/squirtle/squirtle.mtl"></a-asset-item>
+        <img id="sky" src="images/bg-night.jpg" />
+      </a-assets>
+      <a-entity
+        obj-model="obj: #pikachu-obj; mtl: #pikachu-mtl"
+        position="4 0 -7"
+        scale="0.05 0.05 0.05"
+        rotation="-20 100 0"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #bulbasaur-obj; mtl: #bulbasaur-mtl"
+        position="-0.7 0 -5"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+      <a-entity
+        obj-model="obj: #squirtle-obj; mtl: #squirtle-mtl"
+        position="-5 0 -5"
+        scale="0.3 0.3 0.3"
+        rotation="0 -130 180"
+        ></a-entity>
+      <a-sky src="#sky" rotation="0 -90 0" scale="-1 1 1"></a-sky>
+    </a-scene>
+  </body>
+</html>

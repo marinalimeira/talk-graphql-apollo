@@ -23,6 +23,9 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .stack {
   height: 150px; }
 
+.stack-gl {
+  height: 115px; }
+
 .hex {
   height: 300px; }
 

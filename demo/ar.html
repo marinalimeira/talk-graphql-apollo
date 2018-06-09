@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="js/aframe.min.js"></script>
+    <script src="js/aframe-ar.js"></script>
+    <script src="js/TGALoader.js"></script> 
+    <script>THREE.Loader.Handlers.add( /\.tga$/i, new THREE.TGALoader() );</script>
+  </head>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs>
+        <a-assets>
+          <a-asset-item id="pokeball-obj" src="obj/pokeball/pokeball.obj"></a-asset-item>
+          <a-asset-item id="pokeball-mtl" src="obj/pokeball/pokeball.mtl"></a-asset-item>
+        </a-assets>
+        <a-entity
+          obj-model="obj: #pokeball-obj; mtl: #pokeball-mtl"
+          position="0 0.5 0"
+          scale="0.02 0.02 0.02"
+          rotation="90 180 0"
+        ></a-entity>
+      <a-marker-camera preset='hiro'></a-marker-camera>
+    </a-scene>
+  </body>
+</html>

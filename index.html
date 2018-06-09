@@ -86,11 +86,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
         <section>
           <h2>GraphQL</h2>
             <p><em>Query language</em> para APIs</p>
-            <p class="fragment">Agnóstico a linguagem, tanto pra cliente quanto pra servidor</p>
             <p class="fragment">Schema funciona como um contrato entre o cliente o servidor</p>
         </section>
 
-				<section>
+        <section>
           <pre>
             <code data-trim data-noescape>
             type Item {
@@ -104,7 +103,27 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             }
             </code>
           </pre>
-				</section>
+        </section>
+
+        <section>
+          <h2>GraphQL</h2>
+          <p>Agnóstico a linguagem, tanto pra cliente quanto pra servidor</p>
+        </section>
+
+        <section>
+          <h2>GraphQL</h2>
+          <h3 class="purple">Cliente</h3>
+          <img class="stack-gl" src="images/angular-logo.png" />
+          <img class="stack-gl" src="images/react-logo.png" />
+          <img class="stack-gl" src="images/vuejs-logo.png" />
+          <img class="stack-gl" src="images/android-logo.png" />
+          <img class="stack-gl" src="images/ios-logo.png" />
+          <h3 class="purple">Servidor</h3>
+          <img class="stack-gl" src="images/ruby-logo.png" />
+          <img class="stack-gl" src="images/js-logo.png" />
+          <img class="stack-gl" src="images/erlang-logo.png" />
+          <img class="stack-gl" src="images/java-logo.png" />
+        </section>
 
         <section>
           <h2>Queries</h2>
@@ -129,7 +148,7 @@ query {
         <section>
           <h2>Queries</h2>
           <pre>
-            <code data-trim data-noescape>
+            <code data-trim data-noescape class="json">
 {
   "data": {
     "items": [
@@ -149,21 +168,23 @@ query {
         </section>
 
         <section>
+          <h2>GraphQL</h2>
+          <p>Status code <em>normalmente</em> é 200</p>
+          <p class="fragment">Informações sobre o erro estarão no corpo da resposta</p>
+        </section>
+
+        <section>
           <h2>Queries</h2>
           <pre>
-            <code data-trim data-noescape>
+            <code data-trim data-noescape class="json">
 {
   "data": {
     "items": null,
   },
   "errors": [
     {
-      "message": "Quantity must be bigger than 0!",
-      "locations": [
-        {
-          "line": 2,
-          "column": 3
-        }
+      "message": "Unauthorized",
+      "status": "401",
     }
   ]
 }
@@ -198,14 +219,20 @@ mutation {
 
 				<section>
           <h2>Apollo</h2>
-          <h3>Cliente</h3>
-          <img class="stack" src="images/angular-logo.png" />
-          <img class="stack" src="images/react-logo.png" />
-          <img class="stack" src="images/android-logo.png" />
-          <img class="stack" src="images/ios-logo.png" />
-          <h3>Servidor</h3>
-          <img class="stack" src="images/js-logo.png" />
+          <h3 class="purple">Cliente</h3>
+          <img class="stack-gl" src="images/angular-logo.png" />
+          <img class="stack-gl" src="images/react-logo.png" />
+          <img class="stack-gl" src="images/android-logo.png" />
+          <img class="stack-gl" src="images/ios-logo.png" />
+          <h3 class="purple">Servidor</h3>
+          <img class="stack-gl" src="images/js-logo.png" />
 				</section>
+
+        <section>
+          <h2>apollo-client</h2>
+          <img src="images/apollo-client-downloads.png" />
+          <p>Total de ~7kk no NPM</p>
+        </section>
 
         <section>
           { hora de mostrar código }
@@ -238,7 +265,42 @@ query {
         </section>
 
         <section>
+          <h2>apollo-link-state</h2>
+          <p class="purple">Se não estivéssemos utilizando GraphQL, não utilizaríamos</br> o <em>apollo-link-state.</em></p>
+        </section>
+
+        <section>
           { hora de mostrar mais código }
+        </section>
+
+        <section>
+          <h2>Optimistic UI</h2>
+          <p>Simula a resposta do servidor antes de completar o request</p>
+        </section>
+        </section>
+
+        <section>
+          <h2>Optimistic UI</h2>
+          <pre>
+            <code data-trim data-noescape class="javascript">
+mutate({ 
+  variables: { name: evt.target.value },
+  optimisticResponse: {
+     addChannel: {
+       name: evt.target.value,
+       id: Math.round(Math.random() * -1000000),
+       __typename: 'Channel',
+     },
+   },
+   update: ...
+})
+            </code>
+          </pre>
+          <small>
+            Ref: <a href="https://dev-blog.apollodata.com/tutorial-graphql-mutations-optimistic-ui-and-store-updates-f7b6b66bf0e2">
+              dev-blog.apollodata.com/tutorial-graphql..
+            </a>
+          </small>
         </section>
 
         <section data-background-color="#82269E">

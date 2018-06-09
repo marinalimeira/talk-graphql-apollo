@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="js/aframe.min.js"></script>
+    <script src="js/TGALoader.js"></script> 
+    <script>THREE.Loader.Handlers.add( /\.tga$/i, new THREE.TGALoader() );</script>
+    <title>Olar Mundo pt.3</title>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="pedra-do-bauzinho" crossorigin="anonymous" src="images/pedra-do-bauzinho.jpg">
+        <a-asset-item id="bulbasaur-obj" src="obj/bulbasaur/bulbasaur.obj"></a-asset-item>
+        <a-asset-item id="bulbasaur-mtl" src="obj/bulbasaur/bulbasaur.mtl"></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        obj-model="obj: #bulbasaur-obj; mtl: #bulbasaur-mtl"
+        position="0.7 0 -3.5"
+        scale="0.1 0.1 0.1"
+      ></a-entity>
+      <a-sky src="#pedra-do-bauzinho" rotation="0 -90 -10"></a-sky>
+    </a-scene>
+  </body>
+</html>

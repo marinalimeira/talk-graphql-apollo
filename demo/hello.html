@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script src="js/aframe.min.js"></script>
+    <script src="js/aframe-text-geometry-component.min.js"></script> 
+  </head>
+  </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="sky" src="images/bg-night.jpg" />
+      </a-assets>
+      <a-entity
+            text-geometry="value: Olar, Web.br!"
+            position="-2.7 1 -4"
+            material="color: white"
+            ></a-entity>
+        <a-sky src="#sky" rotation="0 -90 0" scale="-1 1 1"></a-sky>
+    </a-scene>
+  </body>
+</html>
