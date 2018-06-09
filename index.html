@@ -241,6 +241,9 @@ mutation {
           </pre>
         </section>
 
+        <section>
+          { hora da demo }
+        </section>
 
         <section>
           <h2>Apollo</h2>
@@ -266,42 +269,21 @@ mutation {
         </section>
 
         <section>
+          <h2>Apollo</h2>
+
+          <img src="images/apollo-cache.png" />
+
+          <small>
+            Ref: <a href="https://dev-blog.apollodata.com/apollo-client-2-0-beyond-graphql-apis-888807b53afe">
+              dev-blog.apollodata.com/apollo-client-2-0...
+            </a>
+          </small>
+
+          <p><p>
+        </section>
+
+        <section>
           { hora de mostrar código }
-        </section>
-
-        <section>
-          <h2>apollo-link-state</h2>
-
-          <p>Mesma finalidade do Redux ➡ estado global<p>
-          <p class="fragment">É possível utilizar mesma query para dados locais e do servidor</p>
-          <p class="fragment">Single source of truth</p>
-        </section>
-
-        <section>
-          <h2>apollo-link-state</h2>
-          <pre>
-            <code data-trim data-noescape>
-query {
-  items {
-    name
-    price
-    quantity
-  }
-  shopping @client {
-    quantity
-  }
-}
-            </code>
-          </pre>
-        </section>
-
-        <section>
-          <h2>apollo-link-state</h2>
-          <p class="purple">Se não estivéssemos utilizando GraphQL, não utilizaríamos</br> o <em>apollo-link-state.</em></p>
-        </section>
-
-        <section>
-          { hora de mostrar mais código }
         </section>
 
         <section>
@@ -332,6 +314,74 @@ mutate({
               dev-blog.apollodata.com/tutorial-graphql..
             </a>
           </small>
+        </section>
+
+        <section>
+          <h2>apollo-link-state</h2>
+
+          <p>Mesma finalidade do Redux ➡ estado global<p>
+          <p class="fragment">É possível utilizar mesma query para dados locais e do servidor</p>
+          <p class="fragment">Single source of truth</p>
+        </section>
+
+        <section>
+          <h2>apollo-link-state</h2>
+          <img src="images/apollo-state.png" />
+          <small>
+            Ref: <a href="https://dev-blog.apollodata.com/the-future-of-state-management-dd410864cae2">
+            dev-blog.apollodata.com/the-future-of-state...
+            </a>
+          </small>
+        </section>
+
+        <section>
+          <h2>apollo-link-state</h2>
+          <pre>
+            <code data-trim data-noescape>
+query {
+  items {
+    name
+    price
+    quantity
+  }
+  shopping @client {
+    quantity
+  }
+}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>apollo-link-state</h2>
+          <pre>
+            <code data-trim data-noescape>
+const stateLink = withClientState({
+  cache,
+  resolvers: {
+    Mutation: {
+      updateShoppingCart: (_, { items }, { cache }) => {
+        const data = {
+          shoppingCart: { __typename: 'ShoppingCart', items },
+        };
+        cache.writeData({ data });
+        return null
+      },
+    },
+  }
+  });
+            </code>
+          </pre>
+          <small>
+            Ref: <a href="https://www.apollographql.com/docs/link/links/state.html">
+              apollographql.com/docs/link...
+            </a>
+          </small>
+        </section>
+
+        <section>
+          <h2>apollo-link-state</h2>
+          <p class="purple">Se não estivéssemos utilizando GraphQL, não utilizaríamos</br> o <em>apollo-link-state.</em></p>
         </section>
 
         <section data-background-color="#82269E">
